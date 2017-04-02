@@ -11,7 +11,7 @@ module.exports = function (grunt) {
   grunt.registerMultiTask('cdnify', 'Replace scripts with refs to the Google CDN', function () {
     // collect files
     var files = grunt.file.expand({ filter: 'isFile' }, this.data.html);
-    var compJson = grunt.file.readJSON('bower.json');
+    var compJson = grunt.file.readJSON(this.data.bowerConfig || 'bower.json');
     var options = this.options({
       cdn: 'google'
     });
